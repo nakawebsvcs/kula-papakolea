@@ -1,0 +1,14 @@
+{
+	"name": "Kula No Nā Poʻe Hawaiʻi",
+	"email": "kula.papakolea@gmail.com",
+	"phoneForTel": "808-649-3725",
+	"phoneFormatted": "(808) 649-3725",
+	"address": {
+		"lineOne": "2150 Tantalus Drive",
+		"city": "Honolulu",
+		"state": "HI",
+		"zip": "96813",
+		"mapLink": "https://maps.app.goo.gl/YtYdY5YyykxaQs7v7"
+	},
+	"domain": "www.kula-papakolea.org"
+}
