@@ -167,15 +167,25 @@ import navData from "@data/navData.json";
                 opacity: 1;
             }
 
-         .cs-top-bar {
-            display: flex; /* Ensure it is displayed */
-            flex-direction: column; /* Stack items vertically for mobile */
-            justify-content: center; /* Center items */
-            align-items: center; /* Center items */
-            padding: 1rem; /* Add some padding */
-            background-color: var(--primary); /* Optional: Add a background color */
-            z-index: 1000; /* Ensure it appears above other elements */
-        }
+        .cs-top-bar {
+    display: flex; /* Ensure it is displayed */
+    flex-direction: column; /* Stack items vertically for mobile */
+    justify-content: center; /* Center items */
+    align-items: center; /* Center items */
+    width: 100%; /* Full width */
+    padding: 1rem; /* Add some padding */
+    background-color: var(--primary); /* Match the mobile menu background */
+    z-index: 1000; /* Ensure it appears above other elements */
+    position: relative; /* Ensure it stays within the flow of the menu */
+    border-bottom: 1px solid #EFF1F0; /* Optional: Add a divider below the top bar */
+    margin-bottom: 1rem; /* Add spacing between the top bar and the menu items */
+    transition: height 0.3s, padding-bottom 0.3s, opacity 0.3s; /* Smooth transitions */
+}
+
+#cs-navigation.cs-active .cs-top-bar {
+    opacity: 1; /* Make it fully visible when active */
+    transform: translateY(0); /* Reset any transform */
+}
 
             .cs-link {
                 color: var(--bodyTextColorWhite);
@@ -209,27 +219,6 @@ import navData from "@data/navData.json";
             }
         }
 
-        .cs-top-bar {
-            margin: 0;
-            padding: 0 0 (12/16rem) 0;
-            position: relative;
-            z-index: -3;
-            transition: height .3s, padding-bottom .3s, opacity .3s;
-            &:before {
-                /* grey line */
-                content: '';
-                width: 100%;
-                height: 1px;
-                background: #EFF1F0;
-                opacity: 1;
-                display: block;
-                position: absolute;
-                right: (-16/16rem);
-                bottom: 0;
-                z-index: -2;
-                transition: opacity .3s;
-            }
-        }
 
         .cs-logo {
             width: 40%;
@@ -522,7 +511,7 @@ import navData from "@data/navData.json";
         }
 
         .cs-li-link {
-            font-size: (24/16rem);
+            font-size: (32/16rem);
         }
     }
 }
@@ -704,7 +693,7 @@ import navData from "@data/navData.json";
 
         .cs-li-link {
             &.cs-drop-link {
-                font-size: (16/16rem);
+                font-size: (20/16rem);
                 line-height: 1.5em;
                 text-decoration: none;
                 white-space: nowrap;
@@ -932,7 +921,7 @@ import navData from "@data/navData.json";
 
         .cs-li-link {
             /* 14px - 16px */
-            font-size: clamp(.875rem, 1vw, 1rem);
+            font-size: clamp(1rem, 1.5vw, 2rem);
             line-height: 1.5em;
             text-decoration: none;
             margin: 0;
@@ -980,7 +969,7 @@ import navData from "@data/navData.json";
             padding: 0 (24/16rem);
             background-color: var(--primary);
             color: #fff;
-            border-radius: (4/16rem);
+            border-radius: (24/16rem);
             display: inline-block;
             position: relative;
             z-index: 1;
@@ -989,9 +978,9 @@ import navData from "@data/navData.json";
                 content: '';
                 width: 0%;
                 height: 100%;
-                background: #000;
+                background: var(--primaryLight);
                 opacity: 1;
-                border-radius: (4/16rem);
+                border-radius: (24/16rem);
                 position: absolute;
                 top: 0;
                 left: 0;

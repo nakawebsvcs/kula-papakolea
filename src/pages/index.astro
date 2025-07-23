@@ -115,11 +115,14 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
 <section id="quote-1307">
     <div class="cs-container">
         <div class="cs-content">
+            <span class="cs-name">Ka Nuʻukia - Our Mission</span>
             <p class="cs-quote">
-                Creating long-term value with entrepreneurial intelligence! Our main goal is Growth.
+                Founded in 1992, Kula no nā Po'e Hawai'i (KULA) is a Native Hawaiian beneficiary serving organization that exists to promote cultural, educational, environmental, and health equity for all. Well-being our priority, education our commitment, community our drive.<br><br>
+
+KULA provides the Papakōlea Hawaiian Homestead Region a multitude of programs and activities from the Papakōlea Community Center.
             </p>
-            <span class="cs-name">Piter Bowman</span>
-            <span class="cs-job">Creative Director</span>
+            
+      <!--      <span class="cs-job">Creative Director</span> -->
         </div>
     </div>
     <!--Background Image-->
@@ -196,8 +199,6 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
             </li>
         </ul>
     </div>
-    <img class="cs-graphic1" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/faces-graphic.svg" alt="graphic" loading="lazy" decoding="async" height="693" width="757">
-    <img class="cs-graphic2" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/faces-graphic-flipped.svg" alt="graphic" loading="lazy" decoding="async" height="693" width="757">
 </section>
                                 
   
@@ -644,30 +645,31 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
             /* centers content horizontally, set to flex-start to left align */
             align-items: center;
             /* set text align to left if content needs to be left aligned */
-            text-align: center;
+            text-align: left;
         }
 
         .cs-quote {
             /* 31px - 49px */
-            font-size: clamp(1.9375rem, 5.1vw, 3.0625rem);
+            font-size: clamp(1.5rem, 2vw, 2.5rem);
             line-height: 1.2em;
-            font-weight: bold;
-            margin: 0;
+            font-weight: normal;
+            margin-top: 2rem;
             margin-bottom: (24/16rem);
-            color: #fff;
+            color: var(--bodyTextColor);
             text-align: inherit;
         }
 
         .cs-name {
             /* 20px - 25px */
+            font-family: 'Playfair Display', Times, serif;
             font-size: clamp(1.25rem, 3.25vw, 1.5625rem);
             line-height: 1.2em;
             font-weight: 700;
             margin: 0;
             margin-bottom: (8/16rem);
-            color: var(--primary);
+            color: var(--bodyTextColor);
             display: block;
-            text-align: inherit;
+            text-align: left;
         }
 
         .cs-job {
@@ -700,7 +702,7 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                opacity: 0.80;
+                opacity: 0.40;
                 position: absolute;
                 top: 0;
                 left: 0;
