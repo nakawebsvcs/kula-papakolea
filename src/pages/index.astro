@@ -130,13 +130,13 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
                 srcset="/assets/images/lai.png">
         <img aria-hidden="true" loading="lazy" decoding="async"
                 src="/assets/images/lai.png"
-                alt="ka nuʻukia - our mission" width="360" height="406">
+                alt="Ka Nuʻukia - Our Mission" width="360" height="406">
     </picture>
 </section>
                                 
 
 <!-- ============================================ -->
-<!--                   Pricing                    -->
+<!--                   Featured Pages              -->
 <!-- ============================================ -->
 
 <section id="pricing-1843">
@@ -211,17 +211,17 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
             <!--Main Image-->
             <picture class="cs-picture">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/bride.png">
+                <source media="(max-width: 600px)" srcset="/assets/images/Kolea-1.png">
                 <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/bride.png">
-                <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/bride.png" alt="wedding bride" width="396" height="570">
+                <source media="(min-width: 601px)" srcset="/assets/images/Kolea-1.png">
+                <img loading="lazy" decoding="async" src="/assets/images/Kolea-1.png" alt="Kōlea" width="396" height="570">
             </picture>
-            <!--Color Wheel-->
-            <img class="cs-wheel" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/color-wheel.png" alt="color wheel" width="542" height="542" aria-hidden="true">
+            <!--Pua Melia-->
+            <img class="cs-wheel" loading="lazy" decoding="async" src="/assets/images/Pua-Melia-2.png" alt="Pua Melia" width="542" height="542" aria-hidden="true">
         </div>
         <div class="cs-content">
-            <span class="cs-topper">Subscribe Us</span>
-            <h2 class="cs-title">Subscribe Your Email for Newsletter & Promotion</h2>
+            <span class="cs-topper">Stay in Touch</span>
+            <h2 class="cs-title">Join our Mailing List!</h2>
             <p class="cs-text">
                 "We're not just photographers, we're dream weavers, transforming your visions into tangible memories you'll cherish forever."
             </p>
@@ -231,8 +231,8 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
             </form>
         </div>
     </div>
-    <!--Flower-->
-    <img class="cs-flower" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/wedding-flower3.png" alt="flower" width="284" height="583" aria-hidden="true">
+    <!--Flower
+    <img class="cs-flower" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/wedding-flower3.png" alt="flower" width="284" height="583" aria-hidden="true"> -->
 </section>
                                 
 
@@ -619,6 +619,8 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
 @media only screen and (min-width: 0rem) {
     #quote-1307 {
         position: relative;
+        min-height: 40vw;
+        overflow: visible;
         z-index: 1;
 
         .cs-container {
@@ -704,11 +706,26 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
                 left: 0;
             }
         }
+
+        /* Add the overlay image */
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%; /* Adjust width as needed */
+        max-width: 600px; /* Optional: limit the max width */
+        height: auto;
+        background: url('/assets/images/fern-divider.png') no-repeat center / contain;
+        z-index: 2; /* Ensure it appears above the background */
+        pointer-events: none; /* Prevent interaction with the overlay */
+    }
     }
 }
 
 /*-- -------------------------- -->
-<---          Pricing           -->
+<---          Featured Pages    -->
 <--- -------------------------- -*/
 
 /* Mobile - 360px */
@@ -1035,7 +1052,7 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
     #subscribe-2143 {
         padding: var(--sectionPadding);
         padding-bottom: 0;
-        background-color: #FBF5F1;
+        background-color: var(--secondaryLight);
         /* clips anything overflowing */
         overflow: hidden;
         position: relative;
@@ -1065,8 +1082,14 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
             z-index: 1;
         }
 
+        .cs-topper {
+          color: var(--primary);
+        }
+
         .cs-title {
             /* 31px - 49px */
+            font-family: Playfair Display, serif;
+            color: var(--secondary);
             font-size: clamp(1.9375rem, 3.3vw, 3.0625rem);
             max-width: 30ch;
         }
@@ -1167,8 +1190,8 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
             height: (570/16em);
             display: block;
             position: absolute;
-            bottom: 0;
-            left: 0;
+            bottom: -2rem;
+            left: 20%;
 
             img {
                 width: auto;
@@ -1178,12 +1201,12 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
         }
 
         .cs-wheel {
-            width: (542/16em);
-            height: (542/16em);
+            width: (342/16em);
+            height: (342/16em);
             object-fit: cover;
             position: absolute;
-            top: (55/16em);
-            right: 0;
+            top: 15rem;
+            right: 40%;
             z-index: -2;
         }
 
