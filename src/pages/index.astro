@@ -61,46 +61,54 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
 <section id="services-38">
     <div class="cs-container">
         <ul class="cs-card-group">
-            <li class="cs-item">
-                <picture class="cs-picture">
-                    <source media="(max-width: 600px)" srcset="/assets/images/Community-Led-Initiatives.jpg">
-                    <source media="(min-width: 601px)" srcset="/assets/images/Community-Led-Initiatives.jpg">
-                    <img loading="lazy" decoding="/assets/images/Community-Led-Initiatives.jpg" alt="community-led initiatives" width="348" height="433" aria-hidden="true">
-                </picture>
+            <li class="cs-item photo-1">
+                <div class="cs-picture">
+                    <div class="cs-accent"></div>
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="/assets/images/Community-Led-Initiatives.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/Community-Led-Initiatives.jpg">
+                        <img loading="lazy" decoding="async" src="/assets/images/Community-Led-Initiatives.jpg" alt="community-led initiatives" width="348" height="433" aria-hidden="true">
+                    </picture>
+                </div>
                 <div class="cs-box">
                     <h3 class="cs-h3">Community-Led <span>Initiatives</span></h3>
                     <p class="cs-item-text">
                         We provide dynamic and responsive education, health, and social service programs that support the long term health and well-being of families in Papakōlea, Kewalo, and Kalawahine by addressing the social determinants of health.
                     </p>
-              <!--       <a class="cs-link" aria-label="read more about floral arrangements" href="">Read More</a> -->
                 </div>
             </li>
-            <li class="cs-item">
-                <picture class="cs-picture">
-                    <source media="(max-width: 600px)" srcset="/assets/images/Community-Engagement.jpg">
-                    <source media="(min-width: 601px)" srcset="/assets/images/Community-Engagement.jpg">
-                    <img loading="lazy" decoding="/assets/images/Community-Engagement.jpg" alt="community engagement" width="348" height="433" aria-hidden="true">
-                </picture>
+
+            <li class="cs-item photo-2">
+                <div class="cs-picture">
+                    <div class="cs-accent"></div>
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="/assets/images/Community-Engagement.jpg">
+                        <source media="(min-width: 601px)" srcset="/assets/images/Community-Engagement.jpg">
+                        <img loading="lazy" decoding="async" src="/assets/images/Community-Engagement.jpg" alt="community engagement" width="348" height="433" aria-hidden="true">
+                    </picture>
+                </div>
                 <div class="cs-box">
                     <h3 class="cs-h3">Community <span>Engagement</span></h3>
                     <p class="cs-item-text">
                         We support annual community events that nurture Papakōlea’s strong sense of community pride, unity, and resilience, while encouraging participation in programs and research with the protective tenets of Cultural Safety and Community Based Participatory Research.
                     </p>
-                <!--      <a class="cs-link" aria-label="read more about Wedding Photography" href="">Read More</a> -->
                 </div>
             </li>
-            <li class="cs-item">
-                <picture class="cs-picture">
-                    <source media="(max-width: 600px)" srcset="/assets/images/Building-Community-Capacity.JPEG">
-                    <source media="(min-width: 601px)" srcset="/assets/images/Building-Community-Capacity.JPEG">
-                    <img loading="lazy" decoding="/assets/images/Building-Community-Capacity.JPEG" alt="building community capacity" width="348" height="433" aria-hidden="true">
-                </picture>
+
+            <li class="cs-item photo-3">
+                <div class="cs-picture">
+                    <div class="cs-accent"></div>
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="/assets/images/Building-Community-Capacity.JPEG">
+                        <source media="(min-width: 601px)" srcset="/assets/images/Building-Community-Capacity.JPEG">
+                        <img loading="lazy" decoding="async" src="/assets/images/Building-Community-Capacity.JPEG" alt="building community capacity" width="348" height="433" aria-hidden="true">
+                    </picture>
+                </div>
                 <div class="cs-box">
                     <h3 class="cs-h3">Building Community Capacity <span>& Lasting Partner Relationships</span></h3>
                     <p class="cs-item-text">
                         We excel at finding the right partners and maintaining positive partner relationships to help us achieve our mission, build community capacity, and ensure true reciprocal collaboration.
                     </p>
-                <!--      <a class="cs-link" aria-label="read more about wedding cakes" href="">Read More</a> -->
                 </div>
             </li>
         </ul>
@@ -375,25 +383,12 @@ KULA provides the Papakōlea Hawaiian Homestead Region a multitude of programs a
 
         .cs-container {
             width: 100%;
-            /* changes to 1280pc at tablet */
             max-width: (550/16rem);
             margin: auto;
             display: flex;
             flex-direction: column;
             align-items: center;
-            /* 48px - 64px */
             gap: clamp(3rem, 6vw, 4rem);
-        }
-
-        .cs-content {
-            /* in case you add a .cs-content to this stitch */
-            /* set text align to left if content needs to be left aligned */
-            text-align: center;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            /* centers content horizontally, set to flex-start to left align */
-            align-items: center;
         }
 
         .cs-card-group {
@@ -427,96 +422,82 @@ KULA provides the Papakōlea Hawaiian Homestead Region a multitude of programs a
         }
 
         .cs-picture {
-    aspect-ratio: 328/360;
-    position: relative;
-    display: block;
-    overflow: visible; /* Keeps image from bleeding outside the picture element */
-    z-index: 1; /* Ensure the image is above the pseudo-elements */
+            position: relative;
+            display: block;
+            overflow: visible;
+            z-index: 2;
+            aspect-ratio: 328 / 360;
 
-    /* Background overlay */
-    &:before {
-        content: "";
-        position: absolute;
-        display: block;
-        height: 0%;
-        width: 100%;
-        background: var(--primaryLight);
-        opacity: 0.8;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        transition: height 0.3s;
-    }
+            .cs-accent {
+                position: absolute;
+                background: url('/assets/images/lauhala-small.png') no-repeat center / contain;
+                z-index: 0;
+                pointer-events: none;
+            }
 
-    /* Accent image for the first picture */
-    &:nth-child(1)::after {
-        content: "";
-        position: absolute;
-        width: 100%; /* Adjust size as needed */
-        height: 50%; /* Adjust size as needed */
-        background: url('/assets/images/lauhala-small.png') no-repeat center / contain; /* Replace with your accent image */
-        top: 15%; /* Adjust position */
-        left: -25%; /* Adjust position */
-        rotate: -90deg;
-        transform: translateY(-50%); /* Center vertically */
-        z-index: -1; /* Place behind the image */
-    }
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                border-radius: (10/16rem);
+                transition: transform 0.7s;
+            }
 
-    /* Accent image for the second picture */
-     &:nth-child(2)::after {
-        content: "";
-        position: absolute;
-        width: 50%; /* Adjust size as needed */
-        height: 50%; /* Adjust size as needed */
-        background: url('/assets/images/lauhala-small.png') no-repeat center / contain; /* Replace with your accent image */
-        top: 20%; /* Adjust position */
-        left: 70%; /* Adjust position */
-        transform: translateX(-50%); /* Center horizontally */
-        z-index: -1; /* Place behind the image */
-    }
+            &:before {
+                content: "";
+                position: absolute;
+                display: block;
+                height: 0%;
+                width: 100%;
+                background: var(--primaryLight);
+                opacity: 0.8;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                transition: height 0.3s;
+            }
+        }
 
-    /* Accent image for the third picture */
-    &:nth-of-type(3)::after {
-        content: "";
-        position: absolute;
-        width: 100%; /* Adjust size as needed */
-        height: 50%; /* Adjust size as needed */
-        background: url('/assets/images/lauhala-small.png') no-repeat center / contain; /* Replace with your accent image */
-        top: 50%; /* Adjust position */
-        right: -40%; /* Adjust position */
-        transform: translateY(-50%); /* Center vertically */
-        z-index: -1; /* Place behind the image */
-    }
+        .cs-item.photo-1 .cs-picture .cs-accent {
+            width: 100%;
+            height: 50%;
+            top: 15%;
+            left: -25%;
+            transform: rotate(-90deg) translateY(-50%);
+        }
 
-    img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        object-fit: cover; /* Makes img tag act like a background image */
-        border-radius: (10/16rem);
-        transition: transform 0.7s;
-    }
-}
+        .cs-item.photo-2 .cs-picture .cs-accent {
+            width: 95%;
+            height: 50%;
+            top: -23%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .cs-item.photo-3 .cs-picture .cs-accent {
+            width: 100%;
+            height: 50%;
+            top: 15%;
+            right: -80%;
+            transform: rotate(-90deg) translateY(-50%);
+        }
 
         .cs-box {
-            /* Centers the button */
             text-align: left;
             width: 90%;
             margin: 0 auto;
-            /* -32px to 48px */
             margin-top: clamp(1.5rem, 2vw, 3rem);
             padding: (24/16rem) (16/16rem) 0;
             background: #fff;
             position: relative;
             z-index: 10;
-            /* Prevents padding from adding to the total width */
             box-sizing: border-box;
         }
 
         .cs-h3 {
-            /* 20px - 25px */
             font-size: clamp(1.25rem, 2vw, 1.5625rem);
             text-align: center;
             line-height: 1.2em;
@@ -535,7 +516,6 @@ KULA provides the Papakōlea Hawaiian Homestead Region a multitude of programs a
 
         .cs-link {
             font-size: (16/16rem);
-            /* 46px - 56px */
             line-height: clamp(2.875em, 5.5vw, 3.5em);
             text-decoration: none;
             font-weight: 700;
@@ -546,6 +526,7 @@ KULA provides the Papakōlea Hawaiian Homestead Region a multitude of programs a
             display: inline-block;
             position: relative;
             z-index: 1;
+
             &:before {
                 content: "";
                 position: absolute;
@@ -560,6 +541,7 @@ KULA provides the Papakōlea Hawaiian Homestead Region a multitude of programs a
                 border-radius: (4/16rem);
                 transition: width 0.3s;
             }
+
             &:hover {
                 &:before {
                     width: 100%;
@@ -586,10 +568,9 @@ KULA provides the Papakōlea Hawaiian Homestead Region a multitude of programs a
         }
 
         .cs-picture {
-            /* 360px - 430px */
             height: clamp(22.5rem, 42vw, 26.875rem);
-            /* reset aspect ratio, don't need it anymore */
             aspect-ratio: initial;
+            position: relative;
         }
 
         .cs-box {
@@ -598,7 +579,6 @@ KULA provides the Papakōlea Hawaiian Homestead Region a multitude of programs a
         }
 
         .cs-h3 {
-            /* force heading to 2 lines for consistent spacing */
             span {
                 display: block;
             }
