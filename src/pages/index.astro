@@ -145,15 +145,14 @@ KULA provides the Papakōlea Hawaiian Homestead Region a multitude of programs a
 <section id="pricing-1843">
     <div class="cs-container">
         <div class="cs-content">
-            <span class="cs-topper">Our Pricing</span>
-            <h2 class="cs-title">Pricing Plans for Our Services</h2>
+ <!--           <span class="cs-topper">Our Pricing</span>
+            <h2 class="cs-title">Pricing Plans for Our Services</h2> -->
         </div>
         <ul class="cs-card-group">
             <li class="cs-item">
                 <div class="cs-price-box">
-                    <span class="cs-package">Basic Membership</span>
-                    <span class="cs-price">$125/month</span>
-                    <img class="cs-leaf" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/derm-leaf.svg" alt="leaf graphic" loading="lazy" decoding="async" height="175" width="142">
+                    <span class="cs-price">Our Work</span>
+                    <img class="cs-leaf" src="/assets/images/fern-accent.png" alt="fern image" loading="lazy" decoding="async" height="175" width="142">
                 </div>
                 <ul class="cs-ul">
                     <li class="cs-li">
@@ -169,13 +168,12 @@ KULA provides the Papakōlea Hawaiian Homestead Region a multitude of programs a
                         The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic.
                     </li>
                 </ul>
-                <a href="" class="cs-button-solid">Buy Subscription</a>
+                <a href="" class="cs-button-solid">Visit Page</a>
             </li>
             <li class="cs-item">
                 <div class="cs-price-box cs-vip">
-                    <span class="cs-package">VIP Membership</span>
-                    <span class="cs-price">$150/month</span>
-                    <img class="cs-leaf" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/derm-leaf.svg" alt="leaf graphic" loading="lazy" decoding="async" height="175" width="142">
+                    <span class="cs-price">Pilina<br>Pūowaina</span>
+                    <img class="cs-leaf" src="/assets/images/fern-accent.png" alt="fern image" loading="lazy" decoding="async" height="175" width="142">
                 </div>
                 <ul class="cs-ul">
                     <li class="cs-li">
@@ -190,12 +188,8 @@ KULA provides the Papakōlea Hawaiian Homestead Region a multitude of programs a
                         <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dark-grey-tick.svg" alt="checkmark" width="24" height="24">
                         The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic.
                     </li>
-                    <li class="cs-li">
-                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dark-grey-tick.svg" alt="checkmark" width="24" height="24">
-                        Nibh mauris diam augue purus pulvinar id. Egestas felis pellentesque fermentum sed urna, amet. Felis, nec odio eget malesuada.
-                    </li>
                 </ul>
-                <a href="" class="cs-button-solid">Buy Subscription</a>
+                <a href="" class="cs-button-solid">Visit Page</a>
             </li>
         </ul>
     </div>
@@ -620,7 +614,7 @@ KULA provides the Papakōlea Hawaiian Homestead Region a multitude of programs a
 @media only screen and (min-width: 0rem) {
     #quote-1307 {
         position: relative;
-        min-height: 40vw;
+        min-height: 44vw;
         overflow: visible;
         z-index: 1;
 
@@ -639,7 +633,7 @@ KULA provides the Papakōlea Hawaiian Homestead Region a multitude of programs a
 
         .cs-content {
             width: 100%;
-            max-width: (850/16rem);
+            max-width: (1100/16rem);
             display: flex;
             flex-direction: column;
             /* centers content horizontally, set to flex-start to left align */
@@ -650,8 +644,9 @@ KULA provides the Papakōlea Hawaiian Homestead Region a multitude of programs a
 
         .cs-quote {
             /* 31px - 49px */
-            font-size: clamp(1.5rem, 2vw, 2.5rem);
-            line-height: 1.2em;
+            font-size: clamp(1.2rem, 1.9vw, 2rem);
+            letter-spacing: 2px;
+            line-height: 1.3em;
             font-weight: normal;
             margin-top: 2rem;
             margin-bottom: (24/16rem);
@@ -713,16 +708,35 @@ KULA provides the Papakōlea Hawaiian Homestead Region a multitude of programs a
     &::after {
         content: "";
         position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
+        bottom: -1rem;
+        left: 0;
         width: 100%; /* Adjust width as needed */
-        max-width: 600px; /* Optional: limit the max width */
-        height: auto;
-        background: url('/assets/images/fern-divider.png') no-repeat center / contain;
+        height: 13rem;
+        background: url('/assets/images/fern-divider.png') repeat-x center / contain;
+        background-position: 0;
+        background-size: calc(60% - 2px) auto;
         z-index: 2; /* Ensure it appears above the background */
         pointer-events: none; /* Prevent interaction with the overlay */
     }
+
+    /* Tablet styles */
+@media only screen and (max-width: 1024px) {
+    #quote-1307::after {
+        background-repeat: no-repeat;
+        background-size: cover; /* Scale the image to cover the width */
+        background-position: center; /* Center the image */
+    }
+}
+
+/* Mobile styles */
+@media only screen and (max-width: 768px) {
+    #quote-1307::after {
+        height: 8rem; /* Reduce height for mobile */
+        background-repeat: no-repeat;
+        background-size: cover; /* Scale the image to cover the width */
+        background-position: center; /* Center the image */
+    }
+}
     }
 }
 
@@ -733,10 +747,22 @@ KULA provides the Papakōlea Hawaiian Homestead Region a multitude of programs a
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
     #pricing-1843 {
-        padding: var(--sectionPadding);
-        background-color: #F6EDDF;
-        overflow: hidden;
         position: relative;
+        padding: var(--sectionPadding);
+        background: url('/assets/images/lauhala-bg.png') repeat center / cover;
+        background-size: calc(18% - 2px) auto;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.5); /* Adjust the color and opacity */
+        z-index: 1; /* Ensure it appears above the background */
+        pointer-events: none; /* Prevent interaction with the overlay */
+    }
 
         .cs-container {
             width: 100%;
@@ -807,9 +833,9 @@ KULA provides the Papakōlea Hawaiian Homestead Region a multitude of programs a
             height: clamp(9.375rem, 19vw, 12.5rem);
             margin-top: (-176/16rem);
             padding: 0;
-            background-color: #fff;
+            background-color: var(--secondaryLight);
             /* 30% opacity of primary color against a white background*/
-            border: 8px solid #DAB692;
+            border: 8px solid var(--primaryLight);
             border-radius: (400/16rem);
             display: flex;
             flex-direction: column;
@@ -823,7 +849,7 @@ KULA provides the Papakōlea Hawaiian Homestead Region a multitude of programs a
                 content: '';
                 width: 100%;
                 height: 100%;
-                background: var(--primary);
+                background: var(--secondaryLight);
                 border-radius: (400/16rem);
                 opacity: .1;
                 position: absolute;
@@ -836,10 +862,11 @@ KULA provides the Papakōlea Hawaiian Homestead Region a multitude of programs a
             }
 
             &.cs-vip {
-                background-color: var(--primary);
+                background-color: var(--secondaryLight);
 
                 .cs-price {
-                    color: var(--bodyTextColorWhite);
+                    color: var(--secondary);
+                    text-align: center;
                 }
             }
         }
@@ -885,16 +912,17 @@ KULA provides the Papakōlea Hawaiian Homestead Region a multitude of programs a
             line-height: 1.2em;
             text-align: inherit;
             margin: 0;
-            color: var(--headerColor);
+            color: var(--secondary);
         }
 
         .cs-leaf {
-            /* 81px - 175px */
-            width: clamp(5.0625rem, 11vw, 10.9375rem);
+            width: clamp(6.5rem, 15vw, 14rem); /* Adjust the width */
             height: auto;
+
+            /* Shift the image slightly to the left */
             position: absolute;
-            bottom: (-4/16rem);
-            left: ~"calc(clamp(1rem, 2.5vw, 2.5rem)*-1)";
+            bottom: -0.5rem; /* Adjust vertical position */
+            left: ~"calc(clamp(1.5rem, 3vw, 3rem) * -1.5)"; /* Shift further left */
             z-index: 1;
         }
 

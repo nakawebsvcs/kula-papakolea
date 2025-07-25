@@ -14,15 +14,14 @@ const currentYear = getCurrentYear()
         ><img
           loading="lazy"
           decoding="async"
-          src="/assets/svgs/logo-white.svg"
+          src="/assets/images/logo-small.png"
           alt="logo"
           width="264"
           height="78"
         /></a
       >
       <p>
-        Extra content if you need it, if not you can delete this whole p tag. I
-        usually do.
+        Copyright © {currentYear} Kula No Nā Poʻe Hawaiʻi - All Rights Reserved.
       </p>
     </div>
     <div class="right-section">
@@ -78,9 +77,8 @@ const currentYear = getCurrentYear()
   </div>
 
   <div class="credit">
-    <span>Designed and Hand Coded by</span>
-    <a href="/" target="_blank" rel="noopener">Your Company Name</a>
-    <span class="copyright"> Copyright {currentYear} - Present</span>
+    <span>Website by</span>
+    <a href="https://nakamurawebservices.com" target="_blank" rel="noopener">Nakamura Web Services</a>
   </div>
 </footer>
 
@@ -98,21 +96,21 @@ const currentYear = getCurrentYear()
       margin-bottom: (50/16rem);
       .logo {
         text-align: center;
-        width: auto;
-        height: (32/16em);
+        width: clamp(8rem, 10vw, 12rem);
+        height: auto;
         margin: auto;
         margin-bottom: (30/16em);
-        display: inline-block;
+        display: block;
 
         img {
-          width: auto;
-          height: 100%;
+          width: 100%;
+          height: auto;
           display: block;
         }
       }
 
       p {
-        font-size: (14/16rem);
+        font-size: (20/16rem);
         line-height: 27/14;
         text-align: center;
         width: 100%;
@@ -219,7 +217,7 @@ const currentYear = getCurrentYear()
       a {
         font-size: (16/16rem);
         text-decoration: none;
-        color: var(--primary);
+        color: white;
 
         &:hover {
           text-decoration: underline;
@@ -256,7 +254,8 @@ const currentYear = getCurrentYear()
 
       .logo {
         text-align: left;
-        height: (40/16rem);
+        width: clamp(8rem, 10vw, 12rem);
+        height: auto;
         margin-left: 0;
       }
 
@@ -321,15 +320,6 @@ const currentYear = getCurrentYear()
       .copyright {
         display: inline-block;
       }
-    }
-  }
-}
-
-/* Dark Mode */
-@media only screen and (min-width: 0em) {
-  body.dark-mode {
-    #footer {
-      background: #061623;
     }
   }
 }
