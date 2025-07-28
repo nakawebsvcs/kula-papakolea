@@ -30,25 +30,52 @@ const currentYear = getCurrentYear()
           <li>
             <h2>Information</h2>
           </li>
-          {
-            navData.map((entry) => (
               <li class="cs-li">
-                <a href={entry.url}>
-                  {entry.key}
+                <a href="/">
+                  Home
                 </a>
               </li>
-            ))
-          }
+              <li class="cs-li">
+                <a href="/">
+                  What We Do
+                </a>
+              </li>
+              <li class="cs-li">
+                <a href="/">
+                  Who We Are
+                </a>
+              </li>
+              <li class="cs-li">
+                <a href="/">
+                  News
+                </a>
+              </li>
         </ul>
         <ul>
           <li>
-            <h2>Services</h2>
+            <h2>Our Work</h2>
           </li>
-          <li>Service1</li>
-          <li>Service2</li>
-          <li>Service4</li>
-          <li>Service5</li>
-        </ul>
+          <li class="cs-li">
+                <a href="/">
+                  Programs
+                </a>
+              </li>
+              <li class="cs-li">
+                <a href="/">
+                  Research
+                </a>
+              </li>
+              <li class="cs-li">
+                <a href="/">
+                  Events
+                </a>
+              </li>
+              <li class="cs-li">
+                <a href="/">
+                  Community Stories
+                </a>
+              </li>
+        </ul> 
         <ul>
           <li>
             <h2>Contact</h2>
@@ -69,7 +96,7 @@ const currentYear = getCurrentYear()
             </a>
           </li>
           <li>
-            <a href={`mailto:${client.email}`}>Click to Email</a>
+            <a href={`mailto:${client.email}`}>kula.papakolea@gmail.com</a>
           </li>
         </ul>
       </div>

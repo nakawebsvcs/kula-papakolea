@@ -93,6 +93,20 @@ import navData from "@data/navData.json";
                         </a>
                     </li>
                 </ul>
+
+                 <!-- Top Bar Links for Mobile -->
+        <li class="cs-li mobile-only">
+            <a href="#" class="cs-li-link">Support Us</a>
+        </li>
+        <li class="cs-li mobile-only">
+            <a href="#" class="cs-li-link">Contact</a>
+        </li>
+        <li class="cs-li mobile-only">
+            <a href="#" class="cs-li-link">My Dashboard</a>
+        </li>
+        <li class="cs-li mobile-only">
+            <a href="#" class="cs-li-link">Login/Register</a>
+        </li>
             </div>
         </nav>
         <a href="" class="cs-button-solid cs-nav-button">Program Signup</a>
@@ -109,6 +123,28 @@ import navData from "@data/navData.json";
 /*-- -------------------------- -->
 <---     Mobile Navigation      -->
 <--- -------------------------- -*/
+
+/* Hide mobile-only links on larger screens */
+@media only screen and (min-width: 64rem) {
+    .mobile-only {
+        display: none;
+    }
+}
+
+/* Style for mobile-only links */
+.mobile-only .cs-li-link {
+    font-size: clamp(1rem, 2.5vw, 1.5rem); /* Match mobile menu font size */
+    line-height: 1.2em;
+    text-decoration: none;
+    color: var(--headerColor); /* Match mobile menu link color */
+    display: block;
+    padding: 0.75rem 1rem; /* Add padding for better spacing */
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: var(--primary); /* Add hover effect */
+    }
+}
 
 /* Mobile - 1023px */
 @media only screen and (max-width: 63.9375rem) {
