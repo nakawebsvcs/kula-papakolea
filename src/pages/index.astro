@@ -63,7 +63,6 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
         <ul class="cs-card-group">
             <li class="cs-item photo-1">
                 <div class="cs-picture">
-                    <div class="cs-accent"></div>
                     <picture>
                         <source media="(max-width: 600px)" srcset="/assets/images/Community-Led-Initiatives.jpg">
                         <source media="(min-width: 601px)" srcset="/assets/images/Community-Led-Initiatives.jpg">
@@ -80,7 +79,6 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
 
             <li class="cs-item photo-2">
                 <div class="cs-picture">
-                    <div class="cs-accent"></div>
                     <picture>
                         <source media="(max-width: 600px)" srcset="/assets/images/Community-Engagement.jpg">
                         <source media="(min-width: 601px)" srcset="/assets/images/Community-Engagement.jpg">
@@ -97,7 +95,6 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
 
             <li class="cs-item photo-3">
                 <div class="cs-picture">
-                    <div class="cs-accent"></div>
                     <picture>
                         <source media="(max-width: 600px)" srcset="/assets/images/Building-Community-Capacity.JPEG">
                         <source media="(min-width: 601px)" srcset="/assets/images/Building-Community-Capacity.JPEG">
@@ -368,10 +365,10 @@ KULA provides the Papakōlea Hawaiian Homestead Region a multitude of programs a
 <---          Services          -->
 <--- -------------------------- -*/
 
-/* Mobile - Hide .cs-accent for #services-38 */
+/* Mobile - 360px */
 @media only screen and (max-width: 768px) {
-    #services-38 .cs-accent {
-        display: none; /* Hide the accent elements on mobile */
+    #services-38 .cs-card-group {
+        background: none; /* No background on mobile */
     }
 }
 
@@ -427,15 +424,6 @@ KULA provides the Papakōlea Hawaiian Homestead Region a multitude of programs a
             z-index: 2;
             aspect-ratio: 328 / 360;
 
-            .cs-accent {
-                position: absolute;
-                background: url('/assets/images/lauhala-small.png') no-repeat center / contain;
-                z-index: 0;
-                pointer-events: none;
-                border-radius: 20%; /* Add rounded corners */
-                opacity: 0.8; 
-            }
-
             img {
                 position: absolute;
                 top: 0;
@@ -460,30 +448,6 @@ KULA provides the Papakōlea Hawaiian Homestead Region a multitude of programs a
                 z-index: 1;
                 transition: height 0.3s;
             }
-        }
-
-        .cs-item.photo-1 .cs-picture .cs-accent {
-            width: 100%;
-            height: 50%;
-            top: 15%;
-            left: -25%;
-            transform: rotate(-90deg) translateY(-50%);
-        }
-
-        .cs-item.photo-2 .cs-picture .cs-accent {
-            width: 95%;
-            height: 50%;
-            top: -23%;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .cs-item.photo-3 .cs-picture .cs-accent {
-            width: 100%;
-            height: 50%;
-            top: 15%;
-            right: -80%;
-            transform: rotate(-90deg) translateY(-50%);
         }
 
         .cs-box {
@@ -584,6 +548,40 @@ KULA provides the Papakōlea Hawaiian Homestead Region a multitude of programs a
                 display: block;
             }
         }
+    }
+}
+
+/* Lauhala Accent Background */
+
+/* Tablet and Desktop - 769px and up */
+@media only screen and (min-width: 769px) {
+    #services-38 .cs-card-group {
+        position: relative; /* Ensure the background sits behind the images */
+        padding: 2rem; /* Add padding around the content */
+    }
+
+    #services-38 .cs-card-group::before {
+        content: "";
+        position: absolute;
+        top: -6rem; /* Start the background 4rem above the images */
+        left: 4;
+        width: 112%;
+        height: calc(60% - 4rem); /* Adjust height to stop before the text */
+        background: url('/assets/images/lauhala-bg.png') repeat center / contain; /* Add a repeating background */
+        background-size: calc(20% - 2px) auto;
+        opacity: 0.7;
+        z-index: 1; /* Ensure it sits behind the images */
+    }
+
+    #services-38 .cs-item {
+        position: relative; /* Ensure images are positioned above the background */
+        z-index: 2; /* Bring the images above the background */
+    }
+
+    #services-38 .cs-box {
+        position: relative;
+        z-index: 3; /* Ensure the text content is above the background */
+        background: #fff; /* Optional: Add a white background to the text box */
     }
 }
 
@@ -1090,9 +1088,17 @@ KULA provides the Papakōlea Hawaiian Homestead Region a multitude of programs a
 }
 
 /* Mobile - Fix for Background Size */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 60rem) {
     #pricing-1843 {
         background-size: calc(50% - 2px) auto; /* Ensure the background covers the entire section */
+        background-position: center; /* Center the background image */
+    }
+}
+
+/* Tablet - Fix for Background Size (630px to 960px) */
+@media only screen and (min-width: 39.375rem) and (max-width: 60rem) {
+    #pricing-1843 {
+        background-size: calc(30% - 2px) auto; /* Adjust background size for this range */
         background-position: center; /* Center the background image */
     }
 }

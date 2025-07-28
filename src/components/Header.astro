@@ -209,26 +209,6 @@ import navData from "@data/navData.json";
                 opacity: 1;
             }
 
-        .cs-top-bar {
-    display: flex; /* Ensure it is displayed */
-    flex-direction: column; /* Stack items vertically for mobile */
-    justify-content: center; /* Center items */
-    align-items: center; /* Center items */
-    width: 100%; /* Full width */
-    padding: 1rem; /* Add some padding */
-    background-color: var(--primary); /* Match the mobile menu background */
-    z-index: 1000; /* Ensure it appears above other elements */
-    position: relative; /* Ensure it stays within the flow of the menu */
-    border-bottom: 1px solid #EFF1F0; /* Optional: Add a divider below the top bar */
-    margin-bottom: 1rem; /* Add spacing between the top bar and the menu items */
-    transition: height 0.3s, padding-bottom 0.3s, opacity 0.3s; /* Smooth transitions */
-}
-
-#cs-navigation.cs-active .cs-top-bar {
-    opacity: 1; /* Make it fully visible when active */
-    transform: translateY(0); /* Reset any transform */
-}
-
             .cs-link {
                 color: var(--bodyTextColorWhite);
             }
@@ -963,7 +943,7 @@ import navData from "@data/navData.json";
 
         .cs-li-link {
             /* 14px - 16px */
-            font-size: clamp(1rem, 1.5vw, 2rem);
+            font-size: clamp(1rem, 1.3vw, 1.3rem);
             line-height: 1.5em;
             text-decoration: none;
             margin: 0;
