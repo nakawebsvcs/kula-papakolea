@@ -1,14 +1,15 @@
-  // Astro:page-load wrapper for View Transitions purposes
+// Astro:page-load wrapper for View Transitions purposes
 document.addEventListener("astro:page-load", () => {
   const CSbody = document.querySelector("body");
   const CSnavbarMenu = document.getElementById("cs-navigation");
   const CSUlWrapper = document.getElementById("cs-ul-wrapper");
   const mobileMenuToggle = document.querySelector(".cs-toggle");
+  const dropdowns = document.querySelectorAll(".cs-dropdown");
 
   function toggleMenu() {
     mobileMenuToggle.classList.toggle("cs-active");
     CSnavbarMenu.classList.toggle("cs-active");
-    CSUlWrapper.classList.toggle("cs-active"); // Ensure wrapper visibility is toggled
+    CSUlWrapper.classList.toggle("cs-active");
     CSbody.classList.toggle("cs-open");
     ariaExpanded(mobileMenuToggle);
   }
@@ -16,6 +17,15 @@ document.addEventListener("astro:page-load", () => {
   // Toggles the hamburger mobile menu
   mobileMenuToggle.addEventListener("click", function () {
     toggleMenu();
+  });
+
+  // Toggles dropdown visibility
+  dropdowns.forEach((dropdown) => {
+    const button = dropdown.querySelector(".cs-li-link");
+    button.addEventListener("click", (e) => {
+      e.preventDefault(); // Prevent default link behavior
+      dropdown.classList.toggle("cs-active");
+    });
   });
 
   // Checks the value of aria-expanded on an element and changes it accordingly
