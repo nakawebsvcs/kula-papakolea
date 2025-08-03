@@ -1,0 +1,770 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import CTA from "@components/CTA.astro";
+import Landing from "@components/Landing.astro";
+import FAQ from "@components/FAQ.astro";
+
+// Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
+import landingImage from "@assets/images/landing.jpg" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+import { getImage } from "astro:assets";
+const optimizedImage = await getImage({src: landingImage, format: 'avif'})
+---
+
+<BaseLayout
+  title="What We Do"
+  description="Meta description for the page"
+  preloadedImage = {optimizedImage}
+>
+
+<!-- ============================================ -->
+<!--                   Banner                     -->
+<!-- ============================================ -->
+
+<div id="banner-1535">
+    <div class="cs-container">
+        <span class="cs-int-title">What We Do</span>
+    </div>
+    <!--Background Image-->
+    <picture class="cs-background">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" srcset="/assets/images/Puu-Papa-Pano.jpeg">
+        <!--Tablet and above Image-->
+        <source media="(min-width: 601px)" srcset="/assets/images/Puu-Papa-Pano.jpeg">
+        <img decoding="async" src="/assets/images/Puu-Papa-Pano.jpeg" alt="people laughing" width="1280" height="568" aria-hidden="true">
+    </picture>
+    <svg class="cs-mask" xmlns="http://www.w3.org/2000/svg" width="1920" height="136" viewBox="0 0 1920 136" fill="none">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M1920 136V0C1803.21 45.3334 1445.52 136 951 136C456.485 136 111.116 45.3334 0 0V136H951H1920Z" fill="var(--maskBG)"/>
+    </svg>
+</div>
+                                
+
+<section id="content-page-1535">
+    <div class="cs-container">
+        <div class="cs-image-group">
+            <!--Flower-->
+            <img class="cs-flower" src="/assets/images/Pua-Melia-4.png" alt="fern" loading="lazy" decoding="async" height="148" width="153">
+            <picture class="cs-background">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="/assets/images/Aloha-Sign.png">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="/assets/images/Aloha-Sign.png">
+                <img loading="lazy" decoding="async" src="/assets/images/Aloha-Sign.png" alt="Papakolea" width="522" height="540">
+            </picture>
+            <!--Floating Blob
+            <img class="cs-floater" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/day-care-events-left.svg" alt="graphic" loading="lazy" decoding="async" height="710" width="690"> -->
+        </div>
+        <div class="cs-content">
+    <!--       <h1 class="cs-title">h1 - A Personalized Approach To Your <span class="cs-color">Well-Being</span></h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <h4>Heading 4-6</h4> -->
+            <p>
+                <span class="span-primary"><strong>Kula no nā Po'e Hawai'i o Papakōlea</strong></span> is a community-based non-profit with a staff of 22 serving the residents of Papakōlea, Kewalo, Kalawahine Hawaiian Homesteads, and the community at large from the Papakōlea Community Center and Park located at 2150 Tantalus Drive, Honolulu, Hawaii since 1992. 
+            </p>
+            <p>
+                KULA provides community-based education, health and work force development services through programs, partnerships, and research, in the interest of lowering health disparities and improving wellbeing in Native Hawaiian and other Pacific Island populations of Hawai'i.  
+            </p>
+            <p>
+              For decades, KULA has successfully utilized community-based participatory research (CBPR) to improve the health of community members through research and delivery of culturally appropriate and community-acceptable programs and services.
+            </p>
+            <p>
+              Our wide-ranging health programs drive community engagement and build workforce capacity in our community. KULA offers activities such as Hula for Hypertension and Lomilomi, certification opportunities for Community Health Workers and social service workshops. Our Service Learning programs for nursing, social work, and public health students from local universities provide home health visits and encourage community stewardship. In 2017, KULA established the Kūpuna Community Care Network to serve our kūpuna, support Caregivers, and ensure that a path and plan exist for our kūpuna to safely age in place.
+            </p>
+            <p>
+              Our education offerings include Lamakū After School Program and Lamakū Junior Leaders Programs, designed for youth from grades K-12 receiving homework assistance and tutoring. KULA partners with Theodore Roosevelt High School, R.L. Stevenson Middle School, Abraham Lincoln Elementary School, and Pauoa Elementary School to address academic achievement, behavior, and attendance of homestead youth. 
+            </p>
+        <!--    <h3>Heading 3</h3>
+            <ol>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+            </ol>
+            <h4>Heading 4-6</h4>
+            <ul>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+            </ul> -->
+        </div>
+    </div>
+    <div class="cs-bubbles" aria-hidden="true"></div>
+</section>
+
+<!-- ============================================ -->
+<!--                  Services                    -->
+<!-- ============================================ -->
+
+<section id="services-24">
+    <div class="cs-container">
+        <div class="cs-content">
+     <!--       <span class="cs-topper">Why Work With Us</span> -->
+            <h2 class="cs-title">See Our Work</h2>
+            <p class="cs-text">
+                Facilisis condimentum viverra scelerisque ac morbi sit sed. Turpis sagittis in blandit eleifend tortor ullamcorper eu placerat. Et orci felis volutpat, etiam vitae egestas volutpat pulvinar. 
+            </p>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <a class="cs-link" href="">
+                    <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/divider4.png" alt="lai" width="125" height="82">
+                    <h3 class="cs-h3">Programs</h3>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a class="cs-link" href="">
+                    <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/divider4.png" alt="lai" width="125" height="82">
+                    <h3 class="cs-h3">Research</h3>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a href="" class="cs-link">
+                    <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/divider4.png" alt="lai" width="125" height="83">
+                    <h3 class="cs-h3">Events</h3>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a href="" class="cs-link">
+                    <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/divider4.png" alt="lai" alt="icon" width="125" height="82">
+                    <h3 class="cs-h3">Community Service</h3>
+                </a>
+            </li>
+        </ul>
+    <!--     <a href="" class="cs-button-solid">Contact Us</a> -->
+    </div>
+</section>
+                                
+</BaseLayout>
+
+<style lang="less">
+  /* PAGE-SPECIFIC STYLES FOR THE ABOUT PAGE */
+
+/*-- -------------------------- -->
+<---          Banner            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #banner-1535 {
+        padding: var(--sectionPadding);
+        /* 190px - 268px */
+        padding-top: clamp(11.875rem, 25vw, 16.75rem);
+        /* 100px - 150px */
+        padding-bottom: clamp(6.25rem, 12vw, 9.375rem);
+        /* clips the line from causing overflow issues for going off screen */
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        
+        .cs-container {
+            text-align: center;
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            /* 8px - 12px */
+            gap: clamp(.5rem, 1vw, .75rem);
+        }
+    
+        .cs-int-title {
+            /* 39px - 61px */
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
+            font-weight: 700;
+            line-height: 1.2em;
+            text-align: inherit;
+            margin: 0;
+            color: white;
+            position: relative;
+        }
+
+        .cs-link {
+            font-size: (16/16rem);
+            line-height: 1.2em;
+            text-decoration: none;
+            color: var(--bodyTextColor);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:last-of-type {
+                /* remove the chevron on the last list item */
+                &::after {
+                    display: none;
+                }
+            }
+
+            &:after {
+                /* chevron */
+                content: '';
+                width: (7/16rem);
+                height: (12/16rem);
+                margin: 0 (16/16rem);
+                background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/grey-chevron.svg");
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                position: relative;
+                display: block;
+            }
+
+            &.cs-active {
+                color: var(--primary);
+            }
+        }
+
+        .cs-background {
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+
+            &:before {
+                /* gradient overlay */
+                content: '';
+                width: 100%;
+                height: 100%;
+                background: rgba(135, 174, 115, 0.6);
+                opacity: .8;
+                position: absolute;
+                display: block;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                /* Makes img tag act as a background image */
+                object-fit: cover;
+            }
+        }
+
+        .cs-mask {
+            --maskBG: #ffffff;
+
+            width: 100%;
+            height: auto;
+            display: block;
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            z-index: 100;
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #banner-1535 {
+        .cs-background {
+            &:before {
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, rgba(135, 174, 115, 0.6) 23.05%, rgba(255, 243, 236, 0.00) 80.08%);
+                opacity: 1;
+            }
+        }
+    }
+}                         
+                            
+/*-- -------------------------- -->
+<---        Content Page        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    @keyframes floatAnimation {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-2rem);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes floatAnimation2 {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-3rem);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    #content-page-1535 {
+        padding: var(--sectionPadding);
+        background-color: #fff;
+        /* clips the wave background from causing overflow issues when it goes off screen */
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 40px - 64px */
+            gap: clamp(2.5rem, 4vw, 4rem);
+            position: relative;
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: left;
+            width: 100%;
+            max-width: (738/16rem);
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: flex-start;
+        }
+    
+        .cs-title {
+            font-family: 'Playfair Display', serif;
+            font-size: var(--headerFontSize);
+            font-weight: 700;
+            line-height: 1.2em;
+            text-align: inherit;
+            width: 100%;
+            max-width: 100%;
+            margin: 0 0 (16/16rem) 0;
+            color: var(--headerColor);
+            position: relative;
+        }
+
+        .span-primary {
+            color: var(--primary);
+        }
+
+        h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            text-align: inherit;
+            margin: 0 0 (16/16rem) 0;
+            color: var(--headerColor);
+        }
+
+        h2 {
+            font-size: (32/16rem);
+            margin-top: (32/16rem);
+        }
+
+        h3 {
+            font-size: (24/16rem);
+            color: var(--primary);
+        }
+
+        h4, h5, h6 {
+            font-size: (20/16rem);
+        }
+
+        .cs-button-solid {
+            margin-bottom: (32/16rem);
+        }
+
+        .cs-no-margin {
+            margin: 0;
+        }
+
+        .cs-color {
+            color: var(--primary);
+        }
+    
+        p {
+            font-size: var(--bodyFontSize);
+            line-height: 1.5em;
+            text-align: inherit;
+            width: 100%;
+            margin: 0 0 (16/16rem) 0;
+            color: var(--bodyTextColor);
+            &:last-of-type {
+                margin-bottom: (32/16rem);
+            }
+
+            a {
+                font-size: inherit;
+                line-height: inherit;
+                text-decoration: underline;
+                color: var(--primary);
+                filter: brightness(120%);
+            }
+        }
+
+        ol, ul {
+            padding-left: (24/16rem);
+            margin: 0 0 (32/16rem) 0;
+            color: var(--bodyTextColor);
+            display: flex;
+            flex-direction: column;
+            gap: (16/16rem);
+        }
+
+        ul {
+            li {
+                list-style: none;
+                color: inherit;
+                position: relative;
+
+                &:before {
+                    /* custom list bullet */
+                    content: '';
+                    width: 3px;
+                    height: 3px;
+                    background: currentColor;
+                    opacity: 1;
+                    border-radius: 50%;
+                    position: absolute;
+                    display: block;
+                    top: (10/16rem);
+                    left: (-12/16rem);
+                }
+            }
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .cs-image-group {
+            width: (522/16em);
+            height: (540/16em);
+            display: none;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cs-background {
+            width: 100%;
+            height: 100%;
+            border-radius: (40/16em);
+            /* clips the corners of the children around the border radius */
+            overflow: hidden;
+            /* makes it cover the parent dimensions */
+            object-fit: cover;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+
+            img {
+                width: 100%;
+                height: 100%;
+                /* makes it cover the parent like a backgorund image */
+                object-fit: cover;
+                display: block;
+            }
+        }
+
+        .cs-flower {
+            width: (163/16em);
+            height: auto;
+            position: absolute;
+            right: (-46/16em);
+            top: (-74/16em);
+            z-index: 10;
+            opacity: 0.9;
+        }
+
+        .cs-floater {
+            width: (710/16em);
+            height: auto;
+            position: absolute;
+            left: (150/16em);
+            top: (400/16em);
+            z-index: -1;
+            animation-name: floatAnimation2;
+            animation-duration: 14s;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #content-page-1535 {
+        .cs-container {
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        .cs-content {
+            width: 60%;
+            max-width: (694/16rem);
+            /* prevents flexbox from squishing it */
+            flex: none;
+        }
+
+        .cs-image-group {
+            font-size:~"min(1.3vw, 1em)";
+            display: block;
+            /* sends it to the right in the 2nd position */
+            order: 2;
+        }
+    }
+}
+
+/* Desktop - 1200px */
+@media only screen and (min-width: 75rem) {
+    #content-page-1535 {
+
+        .cs-content {
+            width: 53%;
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---          Services          -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #services-24 {
+        /* Centers the button */
+        text-align: center;
+        padding: var(--sectionPadding);
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+        }
+
+        .cs-title {
+            font-family: 'Playfair Display', serif;
+            font-size: var(--headerFontSize);
+            font-weight: 700;
+            line-height: 1.2em;
+            color: var(--secondary);
+        }
+
+        .cs-card-group {
+            width: 100%;
+            /* changes to 100% at tablet */
+            max-width: (500/16rem);
+            margin: 0;
+            padding: 0;
+            border: 1px solid #a0a3bd;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cs-item {
+            width: 100%;
+            margin: auto;
+            list-style: none;
+            background-color: #fff;
+            border-bottom: 1px solid #a0a3bd;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: #c8b4aac7;
+
+                .cs-icon {
+                    /* turns it white */
+                    filter: grayscale(1) brightness(1000%);
+                }
+
+                .cs-h3 {
+                    color: var(--secondary);
+                }
+            }
+        }
+
+        .cs-link {
+            text-decoration: none;
+            width: 100%;
+            height: 100%;
+            padding-top: (56/16rem);
+            padding-bottom: (52/16rem);
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            /* Prevents padding from affecting height */
+            box-sizing: border-box;
+        }
+
+        .cs-icon {
+            margin-bottom: (18/16rem);
+        }
+
+        .cs-hover {
+            display: none;
+        }
+
+        .cs-h3 {
+            font-size: (20/16rem);
+            line-height: 1.2em;
+            font-weight: 400;
+            text-align: center;
+            margin: 0;
+            color: var(--headerColor);
+            transition: color 0.3s;
+        }
+
+        .cs-button-solid {
+            font-size: (16/16rem);
+            /* 46px - 56px */
+            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+            text-decoration: none;
+            font-weight: 700;
+            text-align: center;
+            margin: 0;
+            color: #fff;
+            min-width: (150/16rem);
+            padding: 0 (24/16rem);
+            background-color: var(--primary);
+            border-radius: (4/16rem);
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            /* prevents padding from adding to the width */
+            box-sizing: border-box;
+
+            &:before {
+                content: "";
+                position: absolute;
+                height: 100%;
+                width: 0%;
+                background: #000;
+                opacity: 1;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                border-radius: (4/16rem);
+                transition: width 0.3s;
+            }
+
+            &:hover {
+                &:before {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+/* In Between - 500px */
+@media only screen and (min-width: 31.25em) {
+    #services-24 {
+        .cs-card-group {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .cs-item {
+            width: 50%;
+            border-bottom: none;
+            /* Makes borders not affect widths */
+            box-sizing: border-box;
+
+            &:nth-of-type(1) {
+                border-right: 1px solid #a0a3bd;
+                border-bottom: 1px solid #a0a3bd;
+            }
+            &:nth-of-type(2) {
+                border-bottom: 1px solid #a0a3bd;
+            }
+            &:nth-of-type(3) {
+                border-right: 1px solid #a0a3bd;
+            }
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48em) {
+    #services-24 {
+
+        .cs-card-group {
+            max-width: (1080/16rem);
+            border: none;
+        }
+
+        .cs-item {
+            height: (210/16rem);
+            width: 25%;
+
+            &:nth-of-type(1) {
+                border: none;
+                border: 1px solid #a0a3bd;
+            }
+            &:nth-of-type(2) {
+                border: none;
+                border-top: 1px solid #a0a3bd;
+                border-bottom: 1px solid #a0a3bd;
+                border-right: 1px solid #a0a3bd;
+            }
+            &:nth-of-type(3) {
+                border: none;
+                border-top: 1px solid #a0a3bd;
+                border-bottom: 1px solid #a0a3bd;
+            }
+
+            &:nth-of-type(4) {
+                border: 1px solid #a0a3bd;
+            }
+        }
+
+        .cs-link {
+            padding: (37/16rem) 0;
+        }
+
+        .cs-icon {
+            margin-bottom: (28/16rem);
+        }
+    }
+}
+
+/* Desktop - 1200px */  
+@media only screen and (min-width: 75rem) {
+    #services-24 {
+       margin-top: -5rem;
+    }
+}
+                                
+</style>
