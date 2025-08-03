@@ -50,8 +50,8 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
                 <source media="(min-width: 601px)" srcset="/assets/images/Aloha-Sign.png">
                 <img loading="lazy" decoding="async" src="/assets/images/Aloha-Sign.png" alt="Papakolea" width="522" height="540">
             </picture>
-            <!--Floating Blob
-            <img class="cs-floater" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/day-care-events-left.svg" alt="graphic" loading="lazy" decoding="async" height="710" width="690"> -->
+            <!--Floating Blob -->
+            <img class="cs-floater" src="/assets/images/fern-accent-left.png" alt="fern-graphic" loading="lazy" decoding="async" height="710" width="690">
         </div>
         <div class="cs-content">
     <!--       <h1 class="cs-title">h1 - A Personalized Approach To Your <span class="cs-color">Well-Being</span></h1>
@@ -285,29 +285,6 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-    @keyframes floatAnimation {
-        0% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-2rem);
-        }
-        100% {
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes floatAnimation2 {
-        0% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-3rem);
-        }
-        100% {
-            transform: translateY(0);
-        }
-    }
 
     #content-page-1535 {
         padding: var(--sectionPadding);
@@ -475,6 +452,7 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
                 /* makes it cover the parent like a backgorund image */
                 object-fit: cover;
                 display: block;
+                opacity: 0.85;
             }
         }
 
@@ -495,11 +473,7 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
             left: (150/16em);
             top: (400/16em);
             z-index: -1;
-            animation-name: floatAnimation2;
-            animation-duration: 14s;
-            animation-timing-function: ease-in-out;
-            animation-fill-mode: forwards;
-            animation-iteration-count: infinite;
+            opacity: 0.7;
         }
     }
 }
