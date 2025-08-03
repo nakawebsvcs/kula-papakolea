@@ -18,6 +18,23 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
   preloadedImage = {optimizedImage}
 >
 
+  <!-- ============================================ -->
+  <!--                    Hero                      -->
+  <!-- ============================================ -->
+
+ <section id="hero" class="hero">
+  <video
+    class="hero-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    poster="/assets/images/Video-Poster.png">
+    <source src={heroVideo} type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</section>
+
 <!-- ============================================ -->
 <!--                  Content                     -->
 <!-- ============================================ -->
@@ -35,23 +52,6 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
             </p>
         </div>
     </div>
-</section>
-
-  <!-- ============================================ -->
-  <!--                    Hero                      -->
-  <!-- ============================================ -->
-
- <section id="hero" class="hero">
-  <video
-    class="hero-video"
-    autoplay
-    muted
-    loop
-    playsinline
-    poster="/assets/images/Video-Poster.png">
-    <source src={heroVideo} type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
 </section>
                                 
 
@@ -120,7 +120,8 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
         <div class="cs-content">
             <span class="cs-name">Ka Nuʻukia - Our Mission</span>
             <p class="cs-quote">
-                Founded in 1992, Kula no nā Po'e Hawai'i (KULA) is a Native Hawaiian beneficiary serving organization that exists to promote cultural, educational, environmental, and health equity for all. Well-being our priority, education our commitment, community our drive.<br><br>
+                <span class="motto">Well-being our priority, education our commitment, community our drive.</span><br><br>
+                Founded in 1992, Kula no nā Po'e Hawai'i (KULA) is a Native Hawaiian beneficiary serving organization that exists to promote cultural, educational, environmental, and health equity for all.<br><br> 
 
 KULA provides the Papakōlea Hawaiian Homestead Region a multitude of programs and activities from the Papakōlea Community Center.
             </p>
@@ -262,7 +263,6 @@ KULA provides the Papakōlea Hawaiian Homestead Region a multitude of programs a
 @media only screen and (min-width: 0rem) {
     #content-1450 {
         padding: var(--sectionPadding);
-        padding-top: clamp(7rem, 30vh, 15rem);
         
         .cs-container {
             width: 100%;
@@ -367,7 +367,8 @@ KULA provides the Papakōlea Hawaiian Homestead Region a multitude of programs a
 #services-38 {
     position: relative;
     padding: var(--sectionPadding);
-    padding-bottom: clamp(8rem, 12vw, 12rem); // Responsive padding for fern
+    padding-top: clamp(2rem, 3vw, 4rem);
+    padding-bottom: clamp(8rem, 12vw, 12rem);
 
     /* Fern Divider Overlay */
     &::after {
@@ -541,6 +542,36 @@ KULA provides the Papakōlea Hawaiian Homestead Region a multitude of programs a
     }
 }
 
+@media only screen and (max-width: 1023px) {
+    #services-38 {
+        padding-bottom: 11rem;
+
+        .cs-card-group {
+            grid-template-columns: 1fr; /* Ensure vertical stack */
+        }
+
+        .cs-card {
+            max-width: 90%; /* Reduce card width */
+            margin: 0 auto; /* Center the cards */
+            padding: 1rem; /* Add some padding inside the card */
+        }
+
+        .cs-image-wrapper {
+            padding-top: 75%; /* Adjust aspect ratio for smaller images */
+        }
+
+        .cs-card-title {
+            font-size: 1.25rem; /* Reduce title font size */
+            margin-bottom: 0.5rem;
+        }
+
+        .cs-card-text {
+            font-size: 1rem; /* Reduce text font size */
+            line-height: 1.4;
+        }
+    }
+}
+
 
 /*-- -------------------------- -->
 <---         Mission           -->
@@ -550,7 +581,7 @@ KULA provides the Papakōlea Hawaiian Homestead Region a multitude of programs a
 @media only screen and (min-width: 0rem) {
     #quote-1307 {
         position: relative;
-        min-height: 25vw;
+        height: 80vh;
         overflow: visible;
         z-index: 1;
 
@@ -577,7 +608,7 @@ KULA provides the Papakōlea Hawaiian Homestead Region a multitude of programs a
         }
 
         .cs-quote {
-            font-size: clamp(1.2rem, 1.9vw, 1.8rem);
+            font-size: clamp(1.2rem, 1.9vw, 1.5rem);
             letter-spacing: 2px;
             line-height: 1.3em;
             font-weight: normal;
@@ -586,6 +617,14 @@ KULA provides the Papakōlea Hawaiian Homestead Region a multitude of programs a
             padding-top: 2rem;
             color: var(--bodyTextColor);
             text-align: inherit;
+        }
+
+        .motto {
+            font-weight: bold;
+            font-style: italic;
+            text-align: center; /* Centers the text horizontally */
+            display: block; /* Ensure it behaves like a block-level element */
+            margin: 0 auto; 
         }
 
         .cs-name {
@@ -667,7 +706,7 @@ KULA provides the Papakōlea Hawaiian Homestead Region a multitude of programs a
 @media only screen and (min-width: 81.25rem) {
     #quote-1307 {
         position: relative;
-        min-height: clamp(45vh, 60vh, 70vh); /* Dynamically adjust the section height */
+        min-height: 70vh; /* Dynamically adjust the section height */
         display: flex;
         flex-direction: column;
         justify-content: space-between; /* Ensure content and overlay are spaced properly */
